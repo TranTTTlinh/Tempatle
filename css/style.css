@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box; /* width và heigh sẽ bao gồm cho cả phần nội dung, padding và border nhưng không bao gồm margin*/
+    scroll-behavior:smooth ;
+
+}
+
+body {
+    min-height: 1000px;
+}
+
+/* here style*/
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 5px 0 300px;/*tren phai duoi trai*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* cân đều 2 hay nhiều bên*/
+}
+
+header .menu{
+    display: flex; /* cho từ dọc về ngang*/
+}
+
+header .menu li{
+    list-style: none;
+    padding:  15px;
+}
+header .menu #logo {
+    padding: 8px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 50px 0 50px;
+}
+
+header .menu li>a{
+    text-decoration:none;
+    color: #333;
+}
+
+header .menu li>a:hover{ /* bắt sự kiện khi rê chuột vào */
+    text-decoration:none;
+    color: #FF4E44;
+}
+/*and heder*/
+
+/* banner style */
+.banner img {
+    width: 100%;
+    height: 500px;
+    position: absolute; /* thuộc tính là cha */
+    background-size: cover;
+ }
+
+ .text {
+    color:black;
+    font-size:50px;
+    position: relative; /* con của thg cha absolute*/
+    padding:120px 0 0 150px;
+    z-index: 99; /* z-index là mặt sau chồng lên mặt trước */
+ }
+
+.banner div button{
+    color: #333;
+    width: 150px;
+    height: 40px;
+    background-color: aquamarine;
+    border: none;
+ }
+/* end banner */
+
+/* best sellers */
+.title {
+    width: 100%;
+    padding: 150px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* mỗi phần tử sẽ đưa nó vào giữa */
+    flex-direction: column;/* điều hướng cho nó theo cái cột */
+}
+/* bắt đầu chỉnh hình ảnh từ đây 87 tới 152 */
+.best-sellers .product-best-sellers {
+    display: flex;
+    justify-content: center; /* căn chỉnh cho nó vô giữa */
+    flex-direction: row-reverse; /* điều hướng cho nó theo cái hàng */
+    flex-wrap: wrap; /* flex-wrap: bọc hết các flex */
+    margin-top: 20px;
+}
+
+/* viền ngoài chứa hình, chữ và giá tiền */
+.best-sellers .product-best-sellers .product-best-sellers-box {
+    width: 350px;
+    margin: 5px;
+    border: 15px solid #FFF; /* cai nay la tạo viền cho nó*/
+    /* box-shadow: 0 5px 35px rgba(0, 0, 0, 0.09);  */
+    /* position: absolute; */
+}
+
+
+.best-sellers .product-best-sellers .product-best-sellers-box .product-best-sellers-image { /* viền chứa hình */
+    position: relative; 
+    width: 100%;
+    height: 350px;
+}
+
+/* khi nhấn vào trong hình */
+/* .best-sellers .product-best-sellers .product-best-sellers-box .product-best-sellers-image:hover { 
+    width: 100%;
+    height: 365px;
+} */
+
+.best-sellers .product-best-sellers .product-best-sellers-box .product-best-sellers-image a img { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.best-sellers .product-best-sellers .product-best-sellers-box .product-best-sellers-title {
+    padding: 15px 0 5px;
+    justify-content: center;
+    text-align: center;
+}
+.best-sellers .product-best-sellers .product-best-sellers-box .product-best-sellers-price {
+    padding: 15px 0 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.best-sellers .product-best-sellers .product-best-sellers-box .product-best-sellers-image .product-best-sellers-badge {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    width: 100px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+    background-color: #D69BBA;
+}
+/* end best sellers */
+
+/* all cookies */
+/* seperator : là 1 thanh ngang  */
+.divider-seperation { /* padding cho thanh ngang đó*/
+    padding: 0 240px 0 240px;
+}
+.separator { /* cho nó nằm vào gĩưa*/
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+  
+.separator::before,
+.separator::after { /* trước và sau chữ all cookies */
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+  
+/* ở độ phân giải màn hình 1024x768 | 1px = 0.75pt(pt là point) => 1em = 12pt(100%)*/
+/* ở độ phân giải màn hình dưới 800x600 | 1px = 1.28pt(pt là point) => 1em = 12pt(100%)*/
+.separator:not(:empty)::before { /* nó ở đằng trước mà không rỗng thì tạo 1 thanh ngang */
+    margin-right: .25em;
+}
+  
+.separator:not(:empty)::after { /* nó ở đằng sau mà không rỗng thì tạo 1 thanh ngang */
+    margin-left: .25em;
+}
+
+/* end all cookies */
+.all-cookies-content-image.product-cookies-image {
+    padding: 15px 0 5px;
+    justify-content: center;
+    text-align: center;
+}
+.all-cookies-content-image.product-cookies-image{
+    display: flex;
+    flex-direction:row;
+}
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+.all-cookies .all-cookies-items{
+    display:grid;
+    grid-template-columns: auto auto auto  ;
+}
+.all-cookies .all-cookies-items img{
+  width: 100%;
+  height:350px;
+  object-fit: cover;
+ padding :10px;
+}
+.center{
+    text-align: center;
+    font-size:30px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.service-take-care{
+    margin-top:20px;
+    display:flex;
+}
+.service-take-care  img{
+    width:50%;
+
+}
+.service-take-care p{
+    font-size:20px;
+}
+
+.container .all-cookies-title {
+    font-size:20px;
+}
+.col-about-shop{
+    width:50%;
+
+}
+.close-active-shop {
+    width:50%;
+  
+}
+.send-request-with-email{
+    width:50%;
+
+}
+.row-footer-header-info{
+    display: flex;
+    margin-top: 50px;
+
+}
+.row-footer-social-and-copyright{
+    margin-top: 70px;
+   margin-left: 70px;
+   justify-content: space-between;
+   display: flex;
+}
+.social-media-info{
+   margin-right: 70px;
+}
+footer{
+    background-color: #D69BBA;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.social-media-info{
+    margin-top: 30px;
+}
+.shownow{
+    cursor: pointer;
+}
+
